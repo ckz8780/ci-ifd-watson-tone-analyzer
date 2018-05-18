@@ -23,17 +23,17 @@
     </nav>
     <section id="main-content" class="container-fluid">
         <div class="row text-center">
-            <div class="col-xs-12 col-md-4 col-md-offset-4">
+            <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
                 <form>
                     <div class="form-group">
-                        <textarea class="form-control" id="analysis-text" name="userinput" placeholder="Enter some text to be analyzed (1000 character limit) ... " rows="10" maxlength="1000"></textarea>
+                        <textarea class="form-control" id="analysis-text" name="userinput" placeholder="Enter some text to be analyzed (2500 character limit) ... " rows="10" maxlength="2500"></textarea>
                     </div>
                 </form>
-                <button onclick="analyze();" class="btn btn-lg btn-block btn-success"><strong>Analyze Text</strong></button>
+                <button onclick="analyze();" class="btn btn-lg btn-success"><strong>Analyze Text</strong></button>
             </div>
         </div>
         <div class="row text-center">
-            <div class="col-xs-12 col-md-4 col-md-offset-4">
+            <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-4 col-lg-offset-4">
                 <div class="results">
                     <div id="doc-results"></div>
                 </div>
@@ -48,9 +48,13 @@
         </div>
     </section>
     
-    <footer class="container-fluid">
-        <div class="row text-center">
-            <div class="col-xs-12"><h1>Footer goes here</h1></div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-xs-12 col-md-4 col-md-offset-4">
+                    <p class="lead"><a href="https://github.com/ckz8780">Check out my Github!</a></p>
+                </div>
+            </div>
         </div>
     </footer>
 </body>

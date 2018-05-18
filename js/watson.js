@@ -56,6 +56,5 @@ function analyze() {
         $('#doc-results').html(docHTML);
         $('#sent-results').html(sentHTML);
         $('.results').fadeIn();
-        
     });
 }
