@@ -20,36 +20,42 @@ function analyze() {
         
         docTones.forEach(function(docTone) {
             console.log(docTone);
-            docToneTableInnerHTML += `
-                                    <tr>
-                                        <td class="doctone-name">${docTone.tone_name}</td>
-                                        <td class="doctone-score">${docTone.score}</td>
-                                    </tr>`;
+            docToneTableInnerHTML += 
+                `<tr>
+                    <td class="doctone-name">${docTone.tone_name}</td>
+                    <td class="doctone-score">${docTone.score}</td>
+                </tr>`;
         });
         
         sentTones.forEach(function(sentTone) {
             
-            console.log(sentTone);
-            var sentId = sentTone.sentence_id;
-            var sentText = sentTone.text;
-            var sentTones = sentTone.tones.length;
+            var indTonesHTML = '<ul class="list-unstyled">';
+            var indToneScoresHTML = '<ul class="list-unstyled">';
             
-            console.log('Sentence ' + sentId + ': ' + sentText + ' (' + sentTones + ' different tones detected)');
+            sentTone.tones.forEach(function(indTone) {
+                indTonesHTML += `<li class="text-success">${indTone.tone_name}</li>`;
+                indToneScoresHTML += `<li class="text-success">${indTone.score}</li>`;
+            });
+            
+            indTonesHTML += '</ul>';
+            indToneScoresHTML += '</ul>';
             
             sentToneTableInnerHTML += 
                 `<tr>
                     <td class="senttone-id">${sentTone.sentence_id}</td>
                     <td class="senttone-text">${sentTone.text}</td>
+                    <td class="sentence-name">${indTonesHTML}</td>
+                    <td class="sentence-name">${indToneScoresHTML}</td>
                     <td class="senttone-count">${sentTone.tones.length}</td>
                 </tr>`;
-            
         });
         
-        var docHTML = `<h2 class="tone-header">Document Tone:</h2><table class="table table-bordered table-sm table-hover"><tbody><tr><th>Tone Name</th><th>Score</th></tr>${docToneTableInnerHTML}</tbody></table>`;
-        var sentHTML = `<h2 class="tone-header">Sentence Tone:</h2><table class="table table-bordered table-sm table-hover"><tbody><tr><th>Sentence ID</th><th>Text</th><th>Tones Detected</th></tr>${sentToneTableInnerHTML}</tbody></table>`;
+        var docHTML = `<h2 class="tone-header">Document Tone:</h2><table class="table"><tbody><tr><th>Tone Name</th><th>Score</th></tr>${docToneTableInnerHTML}</tbody></table>`;
+        var sentHTML = `<h2 class="tone-header">Sentence Tone:</h2><table class="table"><tbody><tr><th>Sentence ID</th><th>Text</th><th>Tone Name</th><th>Score</th><th>Tone Count</th></tr>${sentToneTableInnerHTML}</tbody></table>`;
         
         $('#doc-results').html(docHTML);
         $('#sent-results').html(sentHTML);
+        $('.results').fadeIn();
         
     });
 }
