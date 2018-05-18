@@ -1,6 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700,800');
 
 body {
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #dedede;
+    color: black;
+}
+
+.table {
+    background-color: #fafafa;
+    font-size: 2.25rem;
 }

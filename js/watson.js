@@ -15,7 +15,8 @@ function analyze() {
     }).done(function(data) {
         var docTones = data.document_tone.tones;
         var sentTones = data.sentences_tone;
-        var docToneTableInnerHTML = ''
+        var docToneTableInnerHTML = '';
+        var sentToneTableInnerHTML = '';
         
         docTones.forEach(function(docTone) {
             console.log(docTone);
@@ -34,10 +35,18 @@ function analyze() {
             var sentTones = sentTone.tones.length;
             
             console.log('Sentence ' + sentId + ': ' + sentText + ' (' + sentTones + ' different tones detected)');
+            
+            sentToneTableInnerHTML += 
+                `<tr>
+                    <td class="senttone-id">${sentTone.sentence_id}</td>
+                    <td class="senttone-text">${sentTone.text}</td>
+                    <td class="senttone-count">${sentTone.tones.length}</td>
+                </tr>`;
+            
         });
         
-        var docHTML = `<h2 class="tone-header">Document Tone:</h2><table class="table table-sm table-striped table-hover"><tbody><tr><th>Tone Name</th><th>Score</th></tr>${docToneTableInnerHTML}</tbody></table>`;
-        var sentHTML = `<h2 class="tone-header">Sentence Tone:</h2><table class="table table-sm table-striped table-hover"></table>`;
+        var docHTML = `<h2 class="tone-header">Document Tone:</h2><table class="table table-bordered table-sm table-hover"><tbody><tr><th>Tone Name</th><th>Score</th></tr>${docToneTableInnerHTML}</tbody></table>`;
+        var sentHTML = `<h2 class="tone-header">Sentence Tone:</h2><table class="table table-bordered table-sm table-hover"><tbody><tr><th>Sentence ID</th><th>Text</th><th>Tones Detected</th></tr>${sentToneTableInnerHTML}</tbody></table>`;
         
         $('#doc-results').html(docHTML);
         $('#sent-results').html(sentHTML);
