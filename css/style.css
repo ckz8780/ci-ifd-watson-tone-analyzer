@@ -6,6 +6,27 @@ body {
     color: black;
 }
 
+.navbar {
+    background-color: #5cb85c;
+    border-bottom: 1px solid black;
+    font-weight: 700;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:focus {
+    color: black;
+    transition: all 0.25s ease-in-out;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: white;
+    transition: all 0.25s ease-in-out;
+}
+
+#main-content {
+    margin-top: 71px;
+}
+
 #analysis-text {
     border-radius: 6px;
 }
@@ -20,6 +41,16 @@ body {
 .table>tbody>tr>th {
     border-top: none;
     text-align: center;
+}
+
+.table>tbody>tr>td {
+    vertical-align: middle;
+    border-top: 1px solid rgb(229,229,229);
+}
+
+.table>tbody>tr:hover {
+    background-color: #f45;
+    z-index: -1;
 }
 
 .results {

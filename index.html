@@ -13,15 +13,15 @@
     <title>Tone Analyzer</title>
 </head>
 <body>
-    <header class="container-fluid">
-        <div class="row text-center">
-            <div class="col-xs-12">
-                <h1><strong>Yell at me. I like it when you yell at me!</strong></h1>
+    
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Watson Tone Analyzer</a>
             </div>
         </div>
-    </header>
-    
-    <section class="container-fluid">
+    </nav>
+    <section id="main-content" class="container-fluid">
         <div class="row text-center">
             <div class="col-xs-12 col-md-4 col-md-offset-4">
                 <form>
@@ -29,7 +29,7 @@
                         <textarea class="form-control" id="analysis-text" name="userinput" placeholder="Enter some text to be analyzed (1000 character limit) ... " rows="10" maxlength="1000"></textarea>
                     </div>
                 </form>
-                <button onclick="analyze();" class="btn btn-lg btn-block btn-success">Tell me things, computer!</button>
+                <button onclick="analyze();" class="btn btn-lg btn-block btn-success"><strong>Analyze Text</strong></button>
             </div>
         </div>
         <div class="row text-center">
