@@ -87,6 +87,70 @@ footer a:hover {
     box-shadow: 0px 0px 5px #333 inset;
 }
 
+.sentence-name ul {
+    margin: 0;
+}
+
+.sent-tone-name, .doc-tone-name {
+    width: auto;
+    border-radius: 6px;
+    margin: 5px auto;
+    box-shadow: 0px 0px 5px #333 inset;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.tone-anger {
+    background-color: red;
+    color: #fafafa;
+}
+
+.tone-fear {
+    background-color: orange;
+}
+
+.tone-joy {
+    background-color: yellow;
+}
+
+.tone-sadness {
+    background-color: blue;
+    color: #fafafa;
+}
+
+.tone-analytical {
+    background-color: black;
+    color: #fafafa;
+}
+
+.tone-confident {
+    background-color: purple;
+    color: #fafafa;
+}
+
+.tone-tentative {
+    background-color: grey;
+}
+
+.tone-unknown {
+    background-color: lightgrey;
+}
+
+.score-low {
+    color: red;
+    font-weight: bold;
+}
+
+.score-med {
+    color: blue;
+    font-weight: bold;
+}
+
+.score-high {
+    color: darkgreen;
+    font-weight: bold;
+}
+
 @media (max-width: 992px) {
     .table-wrapper {
         max-height: 500px;
