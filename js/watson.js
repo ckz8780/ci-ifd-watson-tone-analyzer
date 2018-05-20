@@ -13,6 +13,7 @@ function analyze() {
         },
         data: textToAnalyze
     }).done(function(data) {
+        console.log(data);
         var docTones = data.document_tone.tones;
         var sentTones = data.sentences_tone;
         var docToneTableInnerHTML = '';
@@ -50,10 +51,14 @@ function analyze() {
                 </tr>`;
         });
         
-        var docHTML = `<h2 class="tone-header">Document Tone:</h2><table class="table"><tbody><tr><th>Tone Name</th><th>Score</th></tr>${docToneTableInnerHTML}</tbody></table>`;
-        var sentHTML = `<h2 class="tone-header">Sentence Tone:</h2><table class="table"><tbody><tr><th>Sentence ID</th><th>Text</th><th>Tone Name</th><th>Score</th><th>Tone Count</th></tr>${sentToneTableInnerHTML}</tbody></table>`;
+        var docHeaderHTML = `<h2 class="tone-header">Document Tone:</h2>`;
+        var sentHeaderHTML = `<h2 class="tone-header">Sentence Tone:</h2>`;
+        var docHTML = `<table class="table"><tbody><tr><th>Tone Name</th><th>Score</th></tr>${docToneTableInnerHTML}</tbody></table>`;
+        var sentHTML = `<table class="table"><tbody><tr><th>Sentence ID</th><th>Text</th><th>Tone Name</th><th>Score</th><th>Tone Count</th></tr>${sentToneTableInnerHTML}</tbody></table>`;
         
         $('#doc-results').html(docHTML);
+        $('#sent-header').html(sentHeaderHTML);
+        $('#doc-header').html(docHeaderHTML);
         $('#sent-results').html(sentHTML);
         $('.results').fadeIn();
     });
